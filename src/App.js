@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const Welcome = () =><h1>Cómo estas?</h1>;
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <div className={style}>
         <h1>{title}</h1>
+        <Welcome/>
         <ul>
           {numbers.map((number) =>
             <li>{number}</li>
