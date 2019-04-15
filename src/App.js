@@ -5,6 +5,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
+      name: "",
       title: "This title is from the state",
       tasks: ["Task 1", "Task 2"]
     }
@@ -36,7 +37,9 @@ class App extends Component {
         </ul>
         <button align="left" onClick={this.addTask.bind(this)}>Add new element</button>
         <button onClick={this.updateTask.bind(this)}>Change second task</button>
-
+        <h1>Forms</h1>
+        <input type="text" value={this.state.name} onChange={this.updateName.bind(this)}/>
+        <button onClick={this.sayHi.bind(this)}>Say hi!</button>
       </div>
     );
   }
@@ -66,11 +69,21 @@ class App extends Component {
       
       tasks: [
         ...tasks.slice(0, index),
-        "Actualizado",
+        "Updated",
         ...tasks.slice(index + 1)
       ]
     })
   }
+  updateName(event) {
+    this.setState({
+      name: event.target.value
+    });
+  }
+
+  sayHi() {
+    alert('Hello ' + this.state.name);
+  }
+  
 }
 
 export default App;
