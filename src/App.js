@@ -9,7 +9,8 @@ class App extends Component {
     return (
       <div className={style}>
         <h1>{title}</h1>
-        <Welcome/>
+        <Welcome name="Pedro"/>
+        <Welcome name="Juan"/>
         <ul>
           {numbers.map((number) =>
             <li>{number}</li>
