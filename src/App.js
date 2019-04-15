@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const Welcome = () =><h1>Cómo estas?</h1>;
+import Welcome from './Welcome.js';
 
 class App extends Component {
   render() {
