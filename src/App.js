@@ -56,10 +56,19 @@ class App extends Component {
       task === "Task 2"
     );
 
+   // this.setState({
+   //   tasks: this.state.map((task,i) =>
+   //   i === index ? "Updated": task
+   //   )
+   // })
+    const tasks = this.state.tasks;
     this.setState({
-      tasks: this.state.map((task,i) =>
-      i === index ? "Updated": task
-      )
+      
+      tasks: [
+        ...tasks.slice(0, index),
+        "Actualizado",
+        ...tasks.slice(index + 1)
+      ]
     })
   }
 }
